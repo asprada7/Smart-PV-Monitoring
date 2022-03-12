@@ -1,23 +1,11 @@
-a:link {
-    color: green;
-    background-color: transparent;
+a:link, a:visited {
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
     text-decoration: none;
+    display: inline-block;
   }
   
-  a:visited {
-    color: pink;
-    background-color: transparent;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
+  a:hover, a:active {
+    
   }
