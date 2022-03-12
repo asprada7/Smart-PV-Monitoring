@@ -10,12 +10,12 @@ body{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600; /*600 -> 300*/
-    font-size: 32px; /*32px -> 16px*/
-    line-height: 48px; /*48px -> 24px*/
+    font-size: 16px; /*32px -> 16px*/
+    line-height: 24px; /*48px -> 24px*/
     color: #FFFFFF;
 
     /*Untuk kotak login*/
-    padding: 58px 37px; /*58px 37px -> 29px 18.5px*/
+    padding: 29px 18.5px; /*58px 37px -> 29px 18.5px*/
             
     background: linear-gradient(238.67deg, #007DBC 3.36%, #00A16A 89.78%);
     border-radius: 53px;
@@ -24,12 +24,12 @@ body{
 
 input{
     /* Ukuran box inputan email dan Password*/
-    width: 534.82px;/*534.82px -> 267.41px*/
-    height: 81.27px;/*81.27px -> 40.63px*/
+    width: 267.41px;/*534.82px -> 267.41px*/
+    height: 40.63px;/*81.27px -> 40.63px*/
     left: 693px;
     top: 459px;
 
-    font-size: 25px;/*25px -> 12.5px*/
+    font-size: 12.5px;/*25px -> 12.5px*/
     font-family: 'Poppins';
     font-weight: 400;/*400 -> 200*/
 
@@ -45,8 +45,8 @@ form button{
     border-radius: 88px;
 
     /* Ukuran tombol Login*/
-    width: 230px; /*230px -> 115px*/
-    height: 65px; /*65px -> 32.5px*/
+    width: 115px; /*230px -> 115px*/
+    height: 32.5px; /*65px -> 32.5px*/
 
     /*Ketengahin tombol Login*/
     margin: auto;
@@ -60,8 +60,8 @@ form button{
 }
 
 .inemail{
-    padding: 0px 33px; /*0px 33px -> 0px 16.5px*/
-    font-size: 30px; /*30px -> 15px*/
+    padding: 0px 16.5px; /*0px 33px -> 0px 16.5px*/
+    font-size: 15px; /*30px -> 15px*/
 }
 
 .beforebutton {
@@ -79,8 +79,8 @@ form button{
 
 .checkboxs{
     margin-right: 7px;  
-    width: 20px; /*20px -> 10px*/
-    height: 20px;/*20px -> 10px*/
+    width: 10px; /*20px -> 10px*/
+    height: 10px;/*20px -> 10px*/
   }
 .andick{
     border-radius: 88px;
