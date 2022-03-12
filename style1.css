@@ -1,0 +1,96 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #060818;;
+}
+
+.loginpan{
+    /*untuk font LOGIN*/
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #FFFFFF;
+
+    /*Untuk kotak login*/
+    padding: 58px 37px;
+            
+    background: linear-gradient(238.67deg, #007DBC 3.36%, #00A16A 89.78%);
+    border-radius: 53px;
+       
+}
+
+input{
+    /* Ukuran box inputan email dan Password*/
+    width: 534.82px;
+    height: 81.27px;
+    left: 693px;
+    top: 459px;
+
+    font-size: 25px;
+    font-family: 'Poppins';
+    font-weight: 400;
+
+    background: #FFFFFF;
+    border-radius: 88px;
+}
+
+form button{
+    justify-items: center;
+    align-items: center;
+    border: 5px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 88px;
+
+    /* Ukuran tombol Login*/
+    width: 230px;
+    height: 65px;
+
+    /*Ketengahin tombol Login*/
+    margin: auto;
+    display: block;
+
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    
+    cursor:pointer;
+    overflow: hidden;     
+}
+
+.inemail{
+    padding: 0px 33px;
+    font-size: 30px;
+}
+
+.beforebutton {
+    float: left;
+    width: 50%;
+    
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .checkboxs{
+    margin-right: 7px;  
+    width: 20px;
+    height: 20px;
+  }
+
+  .andick{
+    border-radius: 15px;
+    border: 1px solid grey;
+    padding-left: 8px;
+  }
+  
+  .andick:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px #0066ff;
+  }
+  
