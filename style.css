@@ -93,7 +93,7 @@ form button{
     box-shadow: 0px 0px 2px #0066ff;
   }
 
-@media all and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   logo{
     width: 34.36vw;
     height: 17.85vw;
