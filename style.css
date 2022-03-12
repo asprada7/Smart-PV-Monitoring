@@ -94,7 +94,7 @@ form button{
   }
 
 @media screen and (max-width: 500px) {
-  logo{
+  .logo{
     width: 34.36vw;
     height: 17.85vw;
   }
