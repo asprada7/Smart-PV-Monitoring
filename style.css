@@ -24,8 +24,8 @@ body{
 
 input{
     /* Ukuran box inputan email dan Password*/
-    width: 534.82px;
-    height: 81.27px;
+    width: 12vw;
+    height: 4vh;
     left: 693px;
     top: 459px;
 
@@ -77,18 +77,18 @@ form button{
     clear: both;
   }
 
-  .checkboxs{
+.checkboxs{
     margin-right: 7px;  
     width: 20px;
     height: 20px;
   }
-  .andick{
+.andick{
     border-radius: 88px;
     border: 1px solid grey;
     padding-left: 30px;
   }
   
-  .andick:focus {
+.andick:focus {
     outline: none;
     box-shadow: 0px 0px 2px #0066ff;
   }
