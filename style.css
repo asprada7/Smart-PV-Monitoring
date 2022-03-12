@@ -94,8 +94,8 @@ form button{
   }
 
 @media all and (max-width: 500px) {
-  input{
-    width: 12vw;
-    height: 2vw;
+  logo{
+    width: 34.36vw;
+    height: 17.85vw;
   }
 }
