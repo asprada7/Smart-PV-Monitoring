@@ -5,11 +5,7 @@
     background: linear-gradient(270deg, #007DBC 35.96%, #00A16A 93.44%);
     border-radius: 27px;
 }
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+
 .logopagemonitoring{
     width: 394px;
     height: 73px;
@@ -20,4 +16,5 @@
     height: 76px;
     padding-left: 1000px;
     padding-top: 16px;
+    padding-right: 16px;
 }
