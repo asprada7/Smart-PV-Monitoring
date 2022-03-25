@@ -16,3 +16,18 @@
     height: 73px;
     left: 251px;
 }
+
+.controlswitchpanel{
+    width: 518.53px;
+    height: 131.24px;
+    left: 205px;
+    top: 151px;
+
+    background: #0E1726;
+    border-radius: 27px;
+
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 52px;
+    color: #FFFFFF;
+}
