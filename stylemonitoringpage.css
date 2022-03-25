@@ -20,14 +20,14 @@
 .controlswitchpanel{
     padding-left: 52px;
     padding-top: 40px;
-    width: 518.53px;
-    height: 131.24px;
     left: 205px;
     top: 151px;
 
     background: #0E1726;
     border-radius: 27px;
 
+    font-family: 'Poppins';
+    font-style: normal;
     font-weight: 700;
     font-size: 35px;
     line-height: 52px;
