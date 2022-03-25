@@ -1,7 +1,11 @@
 .navbarmonitor{
     padding-left: 47px;
-    padding-top: 22px;
-
+    position: absolute;
+    width: 1510px;
+    height: 108px;
+    left: 204px;
+    top: 21px;
+    
     background: linear-gradient(270deg, #007DBC 35.96%, #00A16A 93.44%);
     border-radius: 27px;
 }
@@ -10,4 +14,11 @@
     width: 394px;
     height: 73px;
     left: 251px;
+}
+body{
+  position: relative;
+width: 1920px;
+height: 1080px;
+
+background: #060818;
 }
