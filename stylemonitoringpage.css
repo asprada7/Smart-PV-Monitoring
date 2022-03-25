@@ -16,9 +16,8 @@
     left: 251px;
 }
 body{
-  position: relative;
-width: 1920px;
-height: 1080px;
-
-background: #060818;
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    background: #060818;
 }
