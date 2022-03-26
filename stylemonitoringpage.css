@@ -61,7 +61,7 @@
     color: #FFFFFF;
 }
 
-.powerflexkanan{
+.powerflexkanan:focus{
     padding-left: 4vw;
     padding-right: 4vw;
     
@@ -69,14 +69,14 @@
     border-radius: 61px;
 }
 
-.voltflexkanan{
+.voltflexkanan:focus{
     padding-left: 4vw;
     padding-right: 4vw;
     background: #00AE86;
     border-radius: 61px;
 }
 
-.currentflexkanan{
+.currentflexkanan:focus{
     padding-left: 4vw;
     padding-right: 4vw;
     background: #FF902E;
@@ -88,4 +88,11 @@
     padding-right: 4vw;
     background: #636363;
     border-radius: 61px;
+}
+
+button{
+    padding-left: 4vw;
+    padding-right: 4vw;
+    background: #636363;
+    border-radius: 61px;  
 }

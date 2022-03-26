@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome to Smart PV Monitoring</title>
     <link rel="stylesheet" href="style.css" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="link.css" />
     <link rel="stylesheet" href="stylemonitoringpage.css"/>
     <link rel="stylesheet" href="sliderbutton.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 <body>
+    <script src="buttonchecking.js"></script>
     <!-- Container Outer covering whole page -->
     <div class="container-xl">
         <!-- Start of Navbar -->
@@ -204,28 +206,36 @@
                     <div class="d-flex flex-row bd-highlight ">
                         <div class="p-2 bd-highlight">Flex item 1
                         <!-- Start of Power Button Right Flex -->
-                            <div class="powerflexkanan">
-                                <div class="textflexkanan">Power</div>
-                            </div>
+                        <div>
+                            <button id="power" onclick="changeBg(this);" class="unchosenflexkanan textflexkanan">
+                                Power
+                            </button>
+                        </div>
                         <!-- End of Power Button Right Flex -->
                         </div>
                         <div class="p-2 bd-highlight">Flex item 2
                         <!-- Start of Voltage Button Right Flex -->
-                            <div class="unchosenflexkanan">
-                                <div class="textflexkanan">Voltage</div>
-                            </div>
+                        <div>
+                            <button id="volt" onclick="changeBg(this);" class="unchosenflexkanan textflexkanan">
+                                Voltage
+                            </button>
+                        </div>
                         <!-- End of Voltage Button Right Flex -->
                         </div>
                         <div class="p-2 bd-highlight">Flex item 3
                         <!-- Start of Current Button Right Flex -->
-                            <div class="unchosenflexkanan">
-                                <div class="textflexkanan">Current</div>
-                            </div>
+                        <div>
+                            <button id="arus" onclick="changeBg(this);" class="unchosenflexkanan textflexkanan">
+                                Current
+                            </button>
+                        </div>
                         <!-- End of Current Button Right Flex -->
                         </div>
                     </div>
                 </div>
-                <div class="p-2 bd-highlight mb-3">Flex item 2</div>
+                <div class="p-2 bd-highlight mb-3">Flex item 2
+                    
+                </div>
               </div>
              <!-- End of Right Flex Section -->
             </div>
