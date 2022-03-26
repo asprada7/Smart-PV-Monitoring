@@ -45,7 +45,47 @@
     color: #FFFFFF
 }
 .graphbar{
-    padding-left: 5px;
+    min-width: 255px;
     background: #191E3A;
+    border-radius: 61px;
+}
+
+
+.textflexkanan{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+/* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.powerflexkanan{
+    padding-left: 4vw;
+    padding-right: 4vw;
+    
+    background: #006CFF;
+    border-radius: 61px;
+}
+
+.voltflexkanan{
+    padding-left: 4vw;
+    padding-right: 4vw;
+    background: #00AE86;
+    border-radius: 61px;
+}
+
+.currentflexkanan{
+    padding-left: 4vw;
+    padding-right: 4vw;
+    background: #FF902E;
+    border-radius: 61px;
+}
+
+.unchosenflexkanan{
+    padding-left: 4vw;
+    padding-right: 4vw;
+    background: #636363;
     border-radius: 61px;
 }
