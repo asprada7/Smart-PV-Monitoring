@@ -1,7 +1,35 @@
 <?php
-require 'functions.php';
+$servername = "localhost";
 
-$monitor = query("SELECT * FROM dataesp");
+// REPLACE with your Database name
+$dbname = "MBKM";
+// REPLACE with Database user
+$username = "root";
+// REPLACE with Database user password
+$password = "";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT id, sensor, location, value1, value2, value3, reading_time FROM sensordata LIMIT 1 ORDER BY id DESC";
+
+if ($result = $conn->query($sql)) {
+    while ($row = $result->fetch_assoc()) {
+        $row_id = $row["id"];
+        $row_sensor = $row["sensor"];
+        $row_location = $row["location"];
+        $row_value1 = $row["value1"];
+        $row_value2 = $row["value2"]; 
+        $row_value3 = $row["value3"]; 
+        $row_reading_time = $row["reading_time"];
+    }
+}
+
+
 ?>
 
 
@@ -18,10 +46,13 @@ $monitor = query("SELECT * FROM dataesp");
     <link rel="stylesheet" href="stylemonitoringpage.css"/>
     <link rel="stylesheet" href="sliderbutton.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    
 </head>
 <body>
     <script src="buttonchecking.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <!-- Container Outer covering whole page -->
     <div class="container-xl">
         <!-- Start of Navbar -->
@@ -103,7 +134,9 @@ $monitor = query("SELECT * FROM dataesp");
                             <div class="p-2 bd-highlight"></div>
                             
                             <div class="p-2 bd-highlight">
-                                <div style="min-width: 25px;" class="subsubjudul">200</div>
+                                <div style="min-width: 25px;" class="subsubjudul">
+                                12
+                                </div>
                             </div>
                             <div class="p-2 bd-highlight">
                                 <div class="subsubjudul">Watt</div>
@@ -116,7 +149,7 @@ $monitor = query("SELECT * FROM dataesp");
                         <div class="d-flex flex-row bd-highlight ">
                             <div class="bd-highlight graphbar">
                                 <div class="p-1 bd-highlight graphbar">
-                                    <div class="progress progress-bar" role="progressbar" style="width: 100%; height: 3vh; background: #006CFF;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress progress-bar" role="progressbar" style="width: 12%; height: 3vh; background: #006CFF;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div> 
                         </div>
@@ -137,7 +170,7 @@ $monitor = query("SELECT * FROM dataesp");
                             <div class="p-2 bd-highlight"></div>
                             
                             <div class="p-2 bd-highlight">
-                                <div style="min-width: 25px;" class="subsubjudul">19</div>
+                                <div style="min-width: 25px;" class="subsubjudul">12</div>
                             </div>
                             <div class="p-2 bd-highlight">
                                 <div class="subsubjudul">Volt</div>
@@ -148,7 +181,7 @@ $monitor = query("SELECT * FROM dataesp");
                         <!-- Start of Voltage Graph -->
                         <div class="d-flex flex-row bd-highlight ">
                             <div class="p-1 bd-highlight graphbar">
-                                <div class="progress progress-bar" role="progressbar" style="width: 25%; height: 3vh; background: #00AE86;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress progress-bar" role="progressbar" style="width: 100%; height: 3vh; background: #00AE86;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div> 
                         </div>
                         <!-- End of Voltage Graph -->
@@ -169,7 +202,7 @@ $monitor = query("SELECT * FROM dataesp");
                             
                             <div class="p-2 bd-highlight">
                                 <div style="min-width: 25px;" class="subsubjudul">
-                                    2
+                                    1
                                 </div>
                             </div>
                             <div class="p-2 bd-highlight">
@@ -182,7 +215,7 @@ $monitor = query("SELECT * FROM dataesp");
                         <div class="d-flex flex-row bd-highlight mb-4">
                             <div class="bd-highlight graphbar">
                                 <div class="p-1 bd-highlight graphbar">
-                                    <div class="progress progress-bar" role="progressbar" style="width: 40%; height: 3vh; background: #FF902E;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress progress-bar" role="progressbar" style="width: 50%; height: 3vh; background: #FF902E;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div> 
                         </div>
@@ -201,8 +234,8 @@ $monitor = query("SELECT * FROM dataesp");
                                 <div class="subsubjudul">Battery Voltage</div>
                             </div>
                             <div style="font-size: 40px !important; margin-left: 5px; margin-right: 45px;" class="p-2 bd-highlight">
-                                <?= $monitor["power"];
-                                 ?>
+                                12
+
                             </div>
                             <div style="margin-top: 25px;" class="p-1 bd-highlight">
                                 <div class="subsubjudul">Volt</div>
@@ -219,42 +252,69 @@ $monitor = query("SELECT * FROM dataesp");
             <div class="d-flex flex-column bd-highlight mb-3 controlswitchpanel">
                 <div style="justify-content: space-between;" class="p-2 bd-highlight">
                     <div class="d-flex flex-row bd-highlight ">
-                        <div class="p-2 bd-highlight">
-                        <!-- Start of Power Button Right Flex -->
-                        <div>
-                            <button id="power" onclick="changeBg(this);" class="unchosenflexkanan textflexkanan">
-                                Power
-                            </button>
-                        </div>
-                        <!-- End of Power Button Right Flex -->
-                        </div>
-                        <div class="p-2 bd-highlight">
-                        <!-- Start of Voltage Button Right Flex -->
-                        <div>
-                            <button id="volt" onclick="changeBg(this);" class="unchosenflexkanan textflexkanan">
-                                Voltage
-                            </button>
-                        </div>
-                        <!-- End of Voltage Button Right Flex -->
-                        </div>
-                        <div class="p-2 bd-highlight">
-                        <!-- Start of Current Button Right Flex -->
-                        <div>
-                            <button id="arus" onclick="changeBg(this);" class="unchosenflexkanan textflexkanan">
-                                Current
-                            </button>
-                        </div>
-                        <!-- End of Current Button Right Flex -->
-                        </div>
+                        <button onclick="ChartType('bar')" >Bar</button>
+                        <button onclick="ChartType('line')" >Line</button>
                     </div>
                 </div>
                 <div class="p-2 bd-highlight mb-3">Flex item 2
-                    
+                <canvas id="myChart"></canvas>
+
                 </div>
               </div>
              <!-- End of Right Flex Section -->
             </div>
         </div>
     </div>
+    <script>
+    // setup 
+    const data = {
+      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [{
+        label: 'Weekly Sales',
+        data: [18, 12, 6, 9, 12, 3, 9],
+        backgroundColor: [
+          'rgba(255, 26, 104, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(0, 0, 0, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 26, 104, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(0, 0, 0, 1)'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    function
+    </script>
 </body>
+
 </html>

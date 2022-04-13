@@ -1,7 +1,37 @@
 <?php
-require 'functions.php';
+$servername = "localhost";
 
-$monitor = query("SELECT * FROM dataesp");
+// REPLACE with your Database name
+$dbname = "MBKM";
+// REPLACE with Database user
+$username = "root";
+// REPLACE with Database user password
+$password = "";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT id, sensor, location, value1, value2, value3, reading_time FROM sensordata ORDER BY id DESC limit 1";
+
+if ($result = $conn->query($sql)) {
+    while ($row = $result->fetch_assoc()) {
+        $row_id = $row["id"];
+        $row_sensor = $row["sensor"];
+        $row_location = $row["location"];
+        $row_value1 = $row["value1"];
+        $row_value2 = $row["value2"]; 
+        $row_value3 = $row["value3"]; 
+        $row_reading_time = $row["reading_time"];
+    }
+}
+
+$power_bar = $row_value1;
+$voltage_bar = ($row_value2*100)/12;
+$current_bar = ($row_value3*100)/2;
 ?>
 
 
@@ -18,10 +48,11 @@ $monitor = query("SELECT * FROM dataesp");
     <link rel="stylesheet" href="stylemonitoringpage.css"/>
     <link rel="stylesheet" href="sliderbutton.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <script src="buttonchecking.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Container Outer covering whole page -->
     <div class="container-xl">
         <!-- Start of Navbar -->
@@ -103,7 +134,7 @@ $monitor = query("SELECT * FROM dataesp");
                             <div class="p-2 bd-highlight"></div>
                             
                             <div class="p-2 bd-highlight">
-                                <div style="min-width: 25px;" class="subsubjudul">200</div>
+                                <div style="min-width: 25px;" class="subsubjudul"><?=$power_bar?></div>
                             </div>
                             <div class="p-2 bd-highlight">
                                 <div class="subsubjudul">Watt</div>
@@ -116,7 +147,7 @@ $monitor = query("SELECT * FROM dataesp");
                         <div class="d-flex flex-row bd-highlight ">
                             <div class="bd-highlight graphbar">
                                 <div class="p-1 bd-highlight graphbar">
-                                    <div class="progress progress-bar" role="progressbar" style="width: 100%; height: 3vh; background: #006CFF;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress progress-bar" role="progressbar" style="width:<?= $power_bar?>%; height: 3vh; background: #006CFF;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div> 
                         </div>
@@ -137,7 +168,7 @@ $monitor = query("SELECT * FROM dataesp");
                             <div class="p-2 bd-highlight"></div>
                             
                             <div class="p-2 bd-highlight">
-                                <div style="min-width: 25px;" class="subsubjudul">19</div>
+                                <div style="min-width: 25px;" class="subsubjudul"><?=$row_value2?></div>
                             </div>
                             <div class="p-2 bd-highlight">
                                 <div class="subsubjudul">Volt</div>
@@ -148,7 +179,7 @@ $monitor = query("SELECT * FROM dataesp");
                         <!-- Start of Voltage Graph -->
                         <div class="d-flex flex-row bd-highlight ">
                             <div class="p-1 bd-highlight graphbar">
-                                <div class="progress progress-bar" role="progressbar" style="width: 25%; height: 3vh; background: #00AE86;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress progress-bar" role="progressbar" style="width: <?=$voltage_bar?>%; height: 3vh; background: #00AE86;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div> 
                         </div>
                         <!-- End of Voltage Graph -->
@@ -169,7 +200,7 @@ $monitor = query("SELECT * FROM dataesp");
                             
                             <div class="p-2 bd-highlight">
                                 <div style="min-width: 25px;" class="subsubjudul">
-                                    2
+                                    <?=$row_value3?>
                                 </div>
                             </div>
                             <div class="p-2 bd-highlight">
@@ -182,7 +213,7 @@ $monitor = query("SELECT * FROM dataesp");
                         <div class="d-flex flex-row bd-highlight mb-4">
                             <div class="bd-highlight graphbar">
                                 <div class="p-1 bd-highlight graphbar">
-                                    <div class="progress progress-bar" role="progressbar" style="width: 40%; height: 3vh; background: #FF902E;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress progress-bar" role="progressbar" style="width:<?=$current_bar?>%; height: 3vh; background: #FF902E;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div> 
                         </div>
@@ -201,8 +232,7 @@ $monitor = query("SELECT * FROM dataesp");
                                 <div class="subsubjudul">Battery Voltage</div>
                             </div>
                             <div style="font-size: 40px !important; margin-left: 5px; margin-right: 45px;" class="p-2 bd-highlight">
-                                <?= $monitor["power"];
-                                 ?>
+                                <?=$row_value2?>
                             </div>
                             <div style="margin-top: 25px;" class="p-1 bd-highlight">
                                 <div class="subsubjudul">Volt</div>
@@ -222,7 +252,7 @@ $monitor = query("SELECT * FROM dataesp");
                         <div class="p-2 bd-highlight">
                         <!-- Start of Power Button Right Flex -->
                         <div>
-                            <button id="power" onclick="changeBg(this);" class="unchosenflexkanan textflexkanan">
+                            <button id="power" style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;"onclick="changeBg(this);" class="powerflexkanan textflexkanan">
                                 Power
                             </button>
                         </div>
@@ -231,7 +261,7 @@ $monitor = query("SELECT * FROM dataesp");
                         <div class="p-2 bd-highlight">
                         <!-- Start of Voltage Button Right Flex -->
                         <div>
-                            <button id="volt" onclick="changeBg(this);" class="unchosenflexkanan textflexkanan">
+                            <button id="volt" style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;"onclick="changeBg(this);" class="voltflexkanan textflexkanan">
                                 Voltage
                             </button>
                         </div>
@@ -240,7 +270,7 @@ $monitor = query("SELECT * FROM dataesp");
                         <div class="p-2 bd-highlight">
                         <!-- Start of Current Button Right Flex -->
                         <div>
-                            <button id="arus" onclick="changeBg(this);" class="unchosenflexkanan textflexkanan">
+                            <button id="arus" style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;"onclick="changeBg(this);" class="currentflexkanan textflexkanan">
                                 Current
                             </button>
                         </div>
@@ -249,7 +279,15 @@ $monitor = query("SELECT * FROM dataesp");
                     </div>
                 </div>
                 <div class="p-2 bd-highlight mb-3">Flex item 2
-                    
+                    <div id="linegrafik">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div id="linegrafik2">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                    <div id="linegrafik3">
+                        <canvas id="myChart3"></canvas>
+                    </div>
                 </div>
               </div>
              <!-- End of Right Flex Section -->
@@ -257,4 +295,61 @@ $monitor = query("SELECT * FROM dataesp");
         </div>
     </div>
 </body>
+
+<script>
+   let myChart = document.getElementById('myChart').getContext('2d');
+   let bagan1 = new Chart(myChart, {
+    type: 'line', //tipe grafik: line, pie, bar, dll.
+    data:{
+        labels : ['January', 'February', 'March', 'April'],
+        datasets:[{
+            label:'',
+            data:[50, 40, 75, 87],
+            backgroundColor:'#006CFF',
+            borderColor:'#006CFF',
+            borderWidth: 1
+        }]
+    },
+    options:{}
+   });
+</script>
+
+<script>
+   let myChart2 = document.getElementById('myChart2').getContext('2d');
+   let bagan2 = new Chart(myChart2, {
+    type: 'line', //tipe grafik: line, pie, bar, dll.
+    data:{
+        labels : ['January', 'February', 'March', 'April'],
+        datasets:[{
+            label:'',
+            data:[30, 10, 25, 47],
+            backgroundColor: '#00A16A',
+            borderColor: '#00A16A',
+            borderWidth: 1
+        }]
+    },
+    options:{}
+   });
+</script>
+
+<script>
+   let myChart3 = document.getElementById('myChart3').getContext('2d');
+   let bagan3 = new Chart(myChart3, {
+    type: 'line', //tipe grafik: line, pie, bar, dll.
+    data:{
+        labels : ['January', 'February', 'March', 'April'],
+        datasets:[{
+            label:'',
+            data:[89, 77, 38, 52],
+            backgroundColor: '#FF902E',
+            borderColor: '#FF902E',
+            borderWidth: 1
+        }]
+    },
+    options:{
+        
+    }
+   });
+</script>
+
 </html>
