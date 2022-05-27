@@ -210,7 +210,7 @@ $current_bar = ($row_value3*100)/2;
                         <!-- End of Upper title of Current Section -->
 
                         <!-- Start of Current Graph -->
-                        <div class="d-flex flex-row bd-highlight mb-4">
+                        <div class="d-flex flex-row bd-highlight ">
                             <div class="bd-highlight graphbar">
                                 <div class="p-1 bd-highlight graphbar">
                                     <div class="progress progress-bar" role="progressbar" style="width:<?=$current_bar?>%; height: 3vh; background: #FF902E;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -219,11 +219,90 @@ $current_bar = ($row_value3*100)/2;
                         </div>
                         <!-- End of Current Graph -->
                         <!-- End of Summary Graph: Current Section -->
+
+                        <!-- Start of Summary Graph: Energy Section -->
+                        <!-- Start of Upper title of Energy Section -->
+                        <div class="d-flex flex-row bd-highlight ">
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 47px;" class="subsubjudul">Energy</div>
+                            </div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 25px;" class="subsubjudul">
+                                    <?=$row_value3?>
+                                </div>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <div class="subsubjudul">kWh</div>
+                            </div>
+                        </div>
+                        <!-- End of Upper title of Energy Section -->
+
+                        <!-- Start of Energy Graph -->
+                        <div class="d-flex flex-row bd-highlight">
+                            <div class="bd-highlight graphbar">
+                                <div class="p-1 bd-highlight graphbar">
+                                    <div class="progress progress-bar" role="progressbar" style="width:<?=$current_bar?>%; height: 3vh; background: #C7C7C7;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div> 
+                        </div>
+                        <!-- End of Energy Graph -->
+                        <!-- End of Summary Graph: Energy Section -->
+
+                        <!-- Start of Summary Graph: Frequency Section -->
+                        <!-- Start of Upper title of Frequency Section -->
+                        <div class="d-flex flex-row bd-highlight ">
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 47px;" class="subsubjudul">Frequency</div>
+                            </div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            
+                            
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 25px;" class="subsubjudul">
+                                    <?=$row_value3?>
+                                </div>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <div class="subsubjudul">Hz</div>
+                            </div>
+                        </div>
+                        <!-- End of Upper title of Frequency Section -->
+
+                        <!-- Start of Frequency Graph -->
+                        <div class="d-flex flex-row bd-highlight mb-4">
+                            <div class="bd-highlight graphbar">
+                                <div class="p-1 bd-highlight graphbar">
+                                    <div class="progress progress-bar" role="progressbar" style="width:<?=$current_bar?>%; height: 3vh; background: #C7C7C7;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div> 
+                        </div>
+                        <!-- End of Frequency Graph -->
+                        <!-- End of Summary Graph: Frequency Section -->
                     </div>
                     <!-- End of Main Load Summary Bar Graph -->
-                   
+                </div>
+                <!-- End of Left Flex Section -->
+            </div>
+            
+            <div class="p-2 bd-highlight">
+            <!-- Start of Mid Flex Section -->
+                <div class="d-flex flex-column bd-highlight mb-3 controlswitchpanel">
+                    <div class=" bd-highlight">
+                       <div style="margin-top: 2vh; margin-left: 1vw"  class="subjudul">Input Panel (DC)</div>
+                    </div>
                     <!-- Start of Battery Monitoring Section -->
-                    <div style="margin-top: 1vh;" class="p-2 bd-highlight controlswitchpanel">
+                    <div style="" class="p-1 bd-highlight controlswitchpanel">
                         <div class="d-flex flex-row bd-highlight ">
                             <div style="margin-top: 3vh ;" class="p-2 bd-highlight">
                                 <img style="width:25px;max-height:auto;" src="assets/img/batterylogo.png">
@@ -231,7 +310,7 @@ $current_bar = ($row_value3*100)/2;
                             <div style="max-width: 50px; margin-left: 5px;margin-top: 3vh;" class="bd-highlight">
                                 <div class="subsubjudul">Battery Voltage</div>
                             </div>
-                            <div style="font-size: 40px !important; margin-left: 5px; margin-right: 45px;" class="p-2 bd-highlight">
+                            <div style="font-size: 40px !important; margin-left: 5px; margin-right: 15px;" class="p-2 bd-highlight">
                                 <?=$row_value2?>
                             </div>
                             <div style="margin-top: 25px;" class="p-1 bd-highlight">
@@ -240,10 +319,116 @@ $current_bar = ($row_value3*100)/2;
                         </div>
                     </div>
                     <!-- End of Battery Monitoring Section -->
+                    <!-- Start of Summary Graph: Power Section -->
+                    <div style="margin-right:10px" class="d-flex flex-row bd-highlight ">
+                            <!-- Start of Upper title of Power Section -->
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 47px;" class="subsubjudul">Power</div>
+                            </div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 25px;" class="subsubjudul"><?=$power_bar?></div>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <div class="subsubjudul">Watt</div>
+                            </div>
+                            <!-- End of Upper title of Power Section -->
+                        </div>
+                        
+
+                        <!-- Start of the Power Graph -->
+                        <div class="d-flex flex-row bd-highlight ">
+                            <div class="bd-highlight graphbar">
+                                <div class="p-1 bd-highlight graphbar">
+                                    <div class="progress progress-bar" role="progressbar" style="width:<?= $power_bar?>%; height: 3vh; background: #006CFF;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div> 
+                        </div>
+                        <!-- End of the Power Graph -->
+                        <!-- End of Summary Graph: Power Section -->
+                        
+                        <!-- Start of Summary Graph: Voltage Section -->
+                        <!-- Start of Upper title of Voltage Section -->
+                        <div class="d-flex flex-row bd-highlight ">
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 47px;" class="subsubjudul">Voltage</div>
+                            </div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 25px;" class="subsubjudul"><?=$row_value2?></div>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <div class="subsubjudul">Volt</div>
+                            </div>
+                        </div>
+                        <!-- End of Upper title of Voltage Section -->
+                        
+                        <!-- Start of Voltage Graph -->
+                        <div class="d-flex flex-row bd-highlight ">
+                            <div class="p-1 bd-highlight graphbar">
+                                <div class="progress progress-bar" role="progressbar" style="width: <?=$voltage_bar?>%; height: 3vh; background: #00AE86;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div> 
+                        </div>
+                        <!-- End of Voltage Graph -->
+                        <!-- End of Summary Graph: Voltage Section -->
+
+                        <!-- Start of Summary Graph: Current Section -->
+                        <!-- Start of Upper title of Current Section -->
+                        <div class="d-flex flex-row bd-highlight ">
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 47px;" class="subsubjudul">Current</div>
+                            </div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            
+                            <div class="p-2 bd-highlight">
+                                <div style="min-width: 25px;" class="subsubjudul">
+                                    <?=$row_value3?>
+                                </div>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <div class="subsubjudul">A</div>
+                            </div>
+                        </div>
+                        <!-- End of Upper title of Current Section -->
+
+                        <!-- Start of Current Graph -->
+                        <div class="d-flex flex-row bd-highlight ">
+                            <div class="mb-3 bd-highlight graphbar">
+                                <div class="p-1 bd-highlight graphbar">
+                                    <div class="progress progress-bar" role="progressbar" style="width:<?=$current_bar?>%; height: 3vh; background: #FF902E;border-radius: 61px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div> 
+                        </div>
+                        <!-- End of Current Graph -->
+                        <!-- End of Summary Graph: Current Section -->
+                        <div class="d-flex flex-column bd-highlight mb-3">
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                            <div class="p-2 bd-highlight"></div>
+                        </div>
                 </div>
-                <!-- End of Left Flex Section -->
             </div>
-            
             <div class="p-2 bd-highlight ">
             <!-- Start of Right Flex Section -->
             <div class="d-flex flex-column bd-highlight mb-3 controlswitchpanel">
@@ -253,7 +438,7 @@ $current_bar = ($row_value3*100)/2;
                         <!-- Start of Power Button Right Flex -->
                         <div>
                             <button id="power" style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;"onclick="changeBg(this);" class="powerflexkanan textflexkanan">
-                                Power
+                                Power (AC)
                             </button>
                         </div>
                         <!-- End of Power Button Right Flex -->
@@ -262,20 +447,12 @@ $current_bar = ($row_value3*100)/2;
                         <!-- Start of Voltage Button Right Flex -->
                         <div>
                             <button id="volt" style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;"onclick="changeBg(this);" class="voltflexkanan textflexkanan">
-                                Voltage
+                                Power (DC)
                             </button>
                         </div>
                         <!-- End of Voltage Button Right Flex -->
                         </div>
-                        <div class="p-2 bd-highlight">
-                        <!-- Start of Current Button Right Flex -->
-                        <div>
-                            <button id="arus" style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;"onclick="changeBg(this);" class="currentflexkanan textflexkanan">
-                                Current
-                            </button>
-                        </div>
-                        <!-- End of Current Button Right Flex -->
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="p-2 bd-highlight mb-3">Flex item 2
@@ -284,9 +461,6 @@ $current_bar = ($row_value3*100)/2;
                     </div>
                     <div id="linegrafik2">
                         <canvas id="myChart2"></canvas>
-                    </div>
-                    <div id="linegrafik3">
-                        <canvas id="myChart3"></canvas>
                     </div>
                 </div>
               </div>
@@ -304,10 +478,11 @@ $current_bar = ($row_value3*100)/2;
         labels : ['January', 'February', 'March', 'April'],
         datasets:[{
             label:'',
-            data:[50, 40, 75, 87],
+            data:[50, 60, 60, 55],
             backgroundColor:'#006CFF',
             borderColor:'#006CFF',
-            borderWidth: 1
+            borderWidth: 3,
+            
         }]
     },
     options:{}
@@ -325,31 +500,13 @@ $current_bar = ($row_value3*100)/2;
             data:[30, 10, 25, 47],
             backgroundColor: '#00A16A',
             borderColor: '#00A16A',
-            borderWidth: 1
+            borderWidth: 3
         }]
     },
     options:{}
    });
 </script>
 
-<script>
-   let myChart3 = document.getElementById('myChart3').getContext('2d');
-   let bagan3 = new Chart(myChart3, {
-    type: 'line', //tipe grafik: line, pie, bar, dll.
-    data:{
-        labels : ['January', 'February', 'March', 'April'],
-        datasets:[{
-            label:'',
-            data:[89, 77, 38, 52],
-            backgroundColor: '#FF902E',
-            borderColor: '#FF902E',
-            borderWidth: 1
-        }]
-    },
-    options:{
-        
-    }
-   });
-</script>
+
 
 </html>
