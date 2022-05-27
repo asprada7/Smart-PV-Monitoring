@@ -24,8 +24,8 @@ body{
 
 input{
     /* Ukuran box inputan email dan Password*/
-    width: 534.82px;
-    height: 81.27px;
+    width: 100%;
+    height: 30%;
     left: 693px;
     top: 459px;
 
