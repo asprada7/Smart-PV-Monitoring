@@ -478,7 +478,7 @@ $current_bar = ($row_value3*100)/2;
         labels : ['January', 'February', 'March', 'April'],
         datasets:[{
             label:'',
-            data:[50, 60, 60, 55],
+            data:[30, 10, 25, 47],
             backgroundColor:'#006CFF',
             borderColor:'#006CFF',
             borderWidth: 3,
