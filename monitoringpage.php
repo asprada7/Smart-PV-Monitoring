@@ -77,10 +77,10 @@ $current_bar = ($row_value3*100)/2;
         <!-- End of Navbar -->
 
         <!-- Start of 2 main Flex -->
-        <div style="justify-content: space-between;" class="d-flex flex-row bd-highlight mb-3">
+        <div style="justify-content: space-between;" class="d-flex flex-wrap flex-row bd-highlight mb-3">
             <div class="p-2 bd-highlight">
                 <!-- Start of Left Flex Section -->
-                <div class="d-flex flex-column bd-highlight mb-3">
+                <div class="d-flex flex-wrap flex-column bd-highlight mb-3">
                     <!-- Start of Control Button -->
                     <div class="p-2 bd-highlight controlswitchpanel">
                         <div class="d-flex flex-row bd-highlight ">
@@ -108,7 +108,7 @@ $current_bar = ($row_value3*100)/2;
                     
                     <!-- Start of Main Load Summary Bar Graph -->
                     <div style="margin-top:1vh;" class="p-2 bd-highlight controlswitchpanel">
-                        <div class="d-flex flex-row bd-highlight ">
+                        <div class="d-flex flex-wrap flex-row bd-highlight ">
                             <!-- Start of Main Load Title -->
                             <div class="p-1 bd-highlight">
                                 <div class="p-2 bd-highlight">
@@ -433,7 +433,7 @@ $current_bar = ($row_value3*100)/2;
             <!-- Start of Right Flex Section -->
             <div class="d-flex flex-column bd-highlight mb-3 controlswitchpanel">
                 <div style="justify-content: space-between;" class="p-2 bd-highlight">
-                    <div class="d-flex flex-row bd-highlight ">
+                    <div class="d-flex flex-wrap flex-row bd-highlight ">
                         <div class="p-2 bd-highlight">
                         <!-- Start of Power Button Right Flex -->
                         <div>
