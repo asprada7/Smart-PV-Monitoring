@@ -51,7 +51,7 @@ $current_bar = ($row_value3*100)/2;
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <script src="buttonchecking.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Container Outer covering whole page -->
     <div class="container-xl">
@@ -76,7 +76,7 @@ $current_bar = ($row_value3*100)/2;
         </nav>
         <!-- End of Navbar -->
 
-        <!-- Start of 2 main Flex -->
+        <!-- Start of 3 main Flex -->
         <div style="justify-content: space-between;" class="d-flex flex-wrap flex-row bd-highlight mb-3">
             <div class="p-2 bd-highlight">
                 <!-- Start of Left Flex Section -->
@@ -429,41 +429,36 @@ $current_bar = ($row_value3*100)/2;
                         </div>
                 </div>
             </div>
-            <div class="p-2 bd-highlight ">
+        <div class="p-2 ms-auto bd-highlight ">
             <!-- Start of Right Flex Section -->
             <div class="d-flex flex-column bd-highlight mb-3 controlswitchpanel">
                 <div style="justify-content: space-between;" class="p-2 bd-highlight">
-                    <div class="d-flex flex-wrap flex-row bd-highlight ">
+                    <div class="d-flex flex-wrap flex-column bd-highlight ">
                         <div class="p-2 bd-highlight">
-                        <!-- Start of Power Button Right Flex -->
-                        <div>
-                            <button id="power" style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;"onclick="changeBg(this);" class="powerflexkanan textflexkanan">
-                                Power (AC)
-                            </button>
+                            <!-- Start of Power Button Right Flex -->
+                            <div style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;" class="powerflexkanan textflexkanan">
+                                    Power (AC)
+                            </div>
+                            <!-- End of Power Button Right Flex -->
+                            <div class="chart-container" style="position: relative; width:38vw" id="linegrafik">
+                                <canvas id="myChart"></canvas>
+                            </div>
                         </div>
-                        <!-- End of Power Button Right Flex -->
-                        </div>
-                        <div class="p-2 bd-highlight">
-                        <!-- Start of Voltage Button Right Flex -->
-                        <div>
-                            <button id="volt" style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;"onclick="changeBg(this);" class="voltflexkanan textflexkanan">
+</br>
+</br>
+                        <div class="p-2 bd-highlight mb-3">
+                            <!-- Start of Voltage Button Right Flex -->
+                            <div style="padding-left: 4vw;padding-right: 4vw;border-radius: 61px;" class="voltflexkanan textflexkanan">
                                 Power (DC)
-                            </button>
+                            </div>
+                            <!-- End of Voltage Button Right Flex -->
+                            <div id="linegrafik2">
+                                <canvas id="myChart2"></canvas>
+                            </div>
                         </div>
-                        <!-- End of Voltage Button Right Flex -->
-                        </div>
-                        
                     </div>
                 </div>
-                <div class="p-2 bd-highlight mb-3">Flex item 2
-                    <div id="linegrafik">
-                        <canvas id="myChart"></canvas>
-                    </div>
-                    <div id="linegrafik2">
-                        <canvas id="myChart2"></canvas>
-                    </div>
-                </div>
-              </div>
+            </div>
              <!-- End of Right Flex Section -->
             </div>
         </div>
@@ -475,10 +470,10 @@ $current_bar = ($row_value3*100)/2;
    let bagan1 = new Chart(myChart, {
     type: 'line', //tipe grafik: line, pie, bar, dll.
     data:{
-        labels : ['January', 'February', 'March', 'April'],
+        labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'],
         datasets:[{
             label:'',
-            data:[30, 10, 25, 47],
+            data:[30, 10, 25, 47, 50, 5, 65, 85],
             backgroundColor:'#006CFF',
             borderColor:'#006CFF',
             borderWidth: 3,
@@ -494,10 +489,10 @@ $current_bar = ($row_value3*100)/2;
    let bagan2 = new Chart(myChart2, {
     type: 'line', //tipe grafik: line, pie, bar, dll.
     data:{
-        labels : ['January', 'February', 'March', 'April'],
+        labels : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'],
         datasets:[{
             label:'',
-            data:[30, 10, 25, 47],
+            data:[30, 10, 25, 47, 50, 5, 65, 85],
             backgroundColor: '#00A16A',
             borderColor: '#00A16A',
             borderWidth: 3

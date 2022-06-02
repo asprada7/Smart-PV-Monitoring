@@ -1,66 +1,46 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    body{
-        background-color: #060818;
-    }
-   
-</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart PV Monitoring</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="link.css" />
-    
+    <title>Welcome to Baskara Smart PV</title>
 </head>
 <body>
-<div class="container-sm">
-    <div class="center">
-    
-        <div style="text-align: center; margin-top: 5vh" class="logo">
-            <img style="width: 490px; height: 190px;" src="assets/img/logoSmartPV.png">
+    <div class="container">
+        <div class="box">
+            <img style="width: 50%;margin-top: 2vh; margin-bottom: 3vh;" src="assets/img/logo smart pv.png">
+            
+            <div class="form">
+                <h1>
+                    Login
+                  </h1>
+                  <form method="post">
+                    <div class="txt_field">
+                      <input type="text" required>
+                      <label>
+                        Username
+                      </label>
+                    </div>
+                    <div class="txt_field">
+                      <input type="password" required>
+                      <label>
+                        Password
+                      </label>
+                    </div>
+                    <div class="pass">
+                      Forgot Password
+                    </div>
+                    <input type="submit" value="Login">
+                    <div class="signup_link">
+                      Not a member? <a href="">Sign Up</a>
+                    </div>
+                  </form>
+            </div>
         </div>
-       <div class="loginpan">
-        <form method="post">
-            <div class="inemail">
-                <label>Email</label>
-            </div>
-            <div class="txt_field">
-                <input type="text" class="andick" required>
-            </div>
-            
-            <div style="margin-top: 1vh;" class="inemail">
-                <label>Password</label> 
-            </div>
-            <div style="margin-bottom: 1vh; " class="txt_field">
-                <input type="password" class="andick" required>
-            </div>
-            <div class="d-flex flex-row bd-highlight">
-                <div style="font-weight: 600; font-size: 20px; line-height: 30px;" class="p-2 bd-highlight beforebutton">
-                  <input type="checkbox" class="checkboxs" id="rememberme" name="rememberme">Remember Me
-                </div>
-                <div style="text-align: right;font-weight: 600; font-size: 20px; line-height: 30px;" class="p-2 bd-highlight beforebutton">
-                    <a href="forgetpassword.html" target="_blank">Forget Password?</a>  
-                </div>
-            </div><br>
-            
-            <div class="button">
-                <button style="font-size: 25px; color: white; font-weight: 600; font-family: 'Poppins';">
-    
-                    <a href="monitoringpage.html" target="_blank">LOGIN</a> 
-                </button>
-            </div>
-             
-            
-        </form> 
-       </div> 
-      </div>
-</div>
+    </div>
 </body>
 </html>

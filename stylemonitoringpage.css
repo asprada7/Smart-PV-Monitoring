@@ -1,10 +1,5 @@
 .navbarmonitor{
     padding-left: 20px;
-/*  width: 1510px;
-    height: 108px;
-    left: 204px;
-    top: 21px;
-*/
     background: linear-gradient(270deg, #007DBC 35.96%, #00A16A 93.44%);
     border-radius: 27px;
 }
@@ -41,7 +36,6 @@
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
-
     color: #FFFFFF
 }
 .graphbar{
@@ -77,18 +71,8 @@
 .powerflexkanan{
     background-color: #006CFF;
 }
-.currentflexkanan:focus{
-    padding-left: 4vw;
-    padding-right: 4vw;
-    background: #FF902E;
-    border-radius: 61px;
-}
-
-.unchosenflexkanan{
-    padding-left: 4vw;
-    padding-right: 4vw;
-    background: #636363;
-    border-radius: 61px;
+.voltflexkanan{
+    background: #00AE86;
 }
 
 button{
@@ -97,12 +81,9 @@ button{
     background: #636363;
     border-radius: 61px;  
 }
-#linegrafik2,#linegrafik3{
-    display: none;
-
+@media only screen and (max-width: 450px) {
+    .navbarmonitor{
+        min-width: 0px;
+        max-width: 350px;
+    }
 }
-
-
-  
-  /* Use a media query to add a breakpoint at 800px: */
-  
