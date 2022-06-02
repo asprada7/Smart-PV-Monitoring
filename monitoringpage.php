@@ -60,7 +60,7 @@ $current_bar = ($row_value3*100)/2;
             <div style="justify-content: space-between;" class="d-flex flex-row bd-highlight ">
                 <div class="p-2 bd-highlight">
                     <div >
-                        <img style="max-width:50%;max-height:auto" src="assets/img/logoSmartPV2.png">
+                        <img style="max-width:50%;max-height:auto" src="assets/img/logo smart pv.png">
                     </div>
                 </div>
                 <div class="p-2 bd-highlight"></div>
