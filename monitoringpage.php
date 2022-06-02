@@ -42,7 +42,7 @@ $current_bar = ($row_value3*100)/2;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Smart PV Monitoring</title>
-    <link rel="stylesheet" href="style.css" />
+    
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="link.css" />
     <link rel="stylesheet" href="stylemonitoringpage.css"/>
@@ -50,7 +50,7 @@ $current_bar = ($row_value3*100)/2;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
+<body style="background: #060818">
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Container Outer covering whole page -->
